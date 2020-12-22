@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: antiquewhite;
+}
+a {
+    text-decoration: none;
+}
+.header-admin{
+    border: 2px solid red;
+    text-align: center;
+}
+.header-admin > p{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+.header-main-edit > ul > li{
+    float: left;
+    list-style: none;
+    padding: 30px;
+}
+.header-main-edit > ul > li > button > a {
+    text-decoration: none;  
+    font-size: 30px;  
+}

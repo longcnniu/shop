@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/style-admin-product.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="editer">
+        <p style="text-align: center;">Account: <%- listdata.username %> <a class="btn btn-primary" href="/logout/<%- listdata._id %> " role="button">Log out</a></p>
+        <% if(errs.length > 0){{%>
+            <div style="text-align: center;"class="alert alert-success" >
+              <%= errs %>
+            </div>
+          <%  }} %>
+        <ul>
+            <li style="font-size: 80px;">Edit user</li>
+            <ul>
+                <li style="float: right; background-color: #4CAF50; "><a href="/admin">Admin paper</a></li>
+                <li style="float: right; background-color: #4CAF50; margin-right: 30px;"><a href="/dangky">Add new
+                        user</a></li>
+            </ul>
+        </ul>
+    </div>
+
+    <table>
+        <tr>
+            <th style="text-align: center;">User name</th>
+            <th style="text-align: center;">password</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <% listuser.forEach(function(user){ %>
+        <tr>
+            <td><%- user.username %></td>
+            <td><%- user.password %></td>
+            <td><a href="/user/edit/<%- user._id %>">Edit</a></td>
+            <td><a onclick="return confirm('Do you want to delete')" href="/user/delete/<%- user._id %>">Delete</a></td>
+        </tr>
+        <% }); %>
+    </table>
+
+</body>
+
+</html>

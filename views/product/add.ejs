@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/style-addPro.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="form-addpro">
+        <strong>Thêm sản phẩm mới</strong>
+        <form action="../product/add" method="POST" enctype="multipart/form-data" >
+            <% if(errs1.length > 0){{%>
+                <div class="alert alert-success" >
+                  <%= errs1 %>
+                </div>
+              <%  }} %>
+            <b>Produce Name</b> <input style="margin-left: 78px;" type="text" name="namePro"><br>
+            <div style="margin-top: 30px">
+                <b style="margin-right: 55px;">Category Produce</b>
+                <select name="catePro" style="padding: 10px; background-color: gray; width: 100px; color: black;">
+                    <% listcategory.forEach(function(Category){ %>
+                    <option><%- Category.nameCategory %></option>
+                    <% }); %>
+                </select><br>
+            </div>
+            <b>Price</b><input style="margin-left: 148px;" type="text" name="pricePro"><br>
+            <input type="file" name="imgPro"><br>
+            <input type="submit" value="Add new">
+        </form>
+    </div>
+</body>
+</html>

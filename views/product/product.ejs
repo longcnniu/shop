@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/style-admin-product.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <p style="text-align: center;">Account: <%- listdata.username %> <a class="btn btn-primary" href="/logout/<%- listdata._id %> " role="button">Log out</a></p>
+    <% if(errs.length > 0){{%>
+        <div style="text-align: center;"class="alert alert-success" >
+          <%= errs %>
+        </div>
+      <%  }} %>
+    <div class="editer">
+        <ul>
+            <li style="font-size: 80px;">Edit product</li>
+            
+            <ul>
+                <li style="float: right; background-color: #4CAF50; "><a href="/admin">Admin paper</a></li>
+                <li style="float: right; background-color: #4CAF50; margin-right: 30px;"><a href="/admin/product/add">Add new product</a></li>
+            </ul>
+        </ul>
+    </div>
+        <table>
+            <tr>
+              <th style="text-align: center;">Name Product</th>
+              <th style="text-align: center;">image product</th>
+              <th style="text-align: center;">Price product</th>
+              <th style="text-align: center;">Category product</th>
+              <th></th>
+              <th></th>
+            </tr>
+            <% listproduct.forEach(function(Product){ %>       
+            <tr>
+              <td><%- Product.nameProduct %></td>
+              <td><%- Product.imgProduct %></td>
+              <td><%- Product.priceProduct %></td>
+              <td><%- Product.cateProduct %></td>
+              <td><a href="/admin/product/edit/<%- Product._id %>">Edit</a></td>
+              <td><a onclick="return confirm('Do you want to delete')" href="/admin/product/delete/<%- Product._id %>">Delete</a></td>
+            </tr>
+            <% }); %>
+          </table>
+
+</body>
+</html>

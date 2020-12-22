@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/style-admin-product.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="editer">
+        <ul>
+            <li style="font-size: 80px;">Report</li>
+            
+            <ul>
+                <li style="float: right; background-color: #4CAF50; "><a href="/admin">Admin paper</a></li>
+            </ul>
+        </ul>
+    </div>
+    <div style="margin-right: 130px; margin-left: 130px;">
+    <table class="table table-striped" >
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: center">Date</th>
+            <th scope="col"style="text-align: center">Sale number</th>
+            <th scope="col"style="text-align: center">Total bill</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% function groupBy(list, keyGetter) {%> 
+                <%const map = new Map();%> 
+                <%list.forEach((item) => {%> 
+                  <%   const key = keyGetter(item);%> 
+                  <%    const collection = map.get(key);%> 
+                  <%    if (!collection) {%> 
+                    <%      map.set(key, [item]);%> 
+                         <%  } else {%> 
+                          <%       collection.push(item);%> 
+                          <%   }%> 
+                          <%   });%> 
+                          <%   return map;%> 
+                          <%  } %> 
+              <% var listdatas = listdata.sort(function (a, b) {%>
+              <% if (a.date > b.date) return -1;%>
+              <% if (a.date < b.date) return 1;%>
+              <% return 0;%>
+              <% }) %>
+                
+              <% const grouped = groupBy(listdatas, datas => datas.date); %> 
+              <% grouped.forEach(function(data){ %>
+          <tr>
+            
+            <td style="border: 1px solid black;"><%- data[0].date%></td>         
+            <td style="border: 1px solid black;"><%- data.length %></td>  
+            <% var sum = 0 %>  
+            <% data.forEach(myFunction); %>  
+            <% function myFunction(item) { %> 
+                <%  sum += item.total;  %>   
+            <% } %> 
+              <td style="border: 1px solid black;"><%- sum %> </td>
+          </tr>
+        <% }) %> 
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>

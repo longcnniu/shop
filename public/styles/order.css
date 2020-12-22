@@ -1,0 +1,44 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.editer > ul > li{
+float: left;
+list-style: none;
+font-size: 50px;
+font-weight: 400;
+margin: 30px 150px 30px 150px ;
+}
+.editer > ul > ul > li{
+float: right;
+list-style: none;
+margin-right: 150px;
+margin-top: 80px;
+padding: 20px;
+text-align: center;
+border-radius: 10PX;
+}
+.editer > ul > ul > li > a {
+text-decoration: none;
+font-size: 20px;
+color: white  ;
+}
+.editer > ul > ul > li > a:hover{
+color: black;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+

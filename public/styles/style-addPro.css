@@ -1,0 +1,34 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.form-addpro {
+    margin-top: 40px;
+    margin-left: 230px;
+}
+.form-addpro > strong{
+    margin-left: 35%;
+    font-size: 40px;
+}
+.form-addpro > form > b {
+    margin-top: 40px;
+
+}
+.form-addpro > form > input{
+    width: 70%;
+    height: 25px;
+    margin-top: 30px;
+    margin-left: 40px; 
+    padding: 10px;
+}
+.form-addpro > form > input[type="file"]{
+    margin-left: 35%;
+}
+.form-addpro > form > input[type="submit"]{
+    width: 160px;
+    height: 50px;
+    margin-left: 35%;
+
+    padding: none;
+}

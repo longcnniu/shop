@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="http://localhost:3000/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/style-addPro.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="form-addpro">
+        <strong>Edit user</strong>
+        <form action="../user/edit" method="POST">
+            <input style="margin-left: 78px;" type="hidden"  value="<%- listuser._id %>" name="idUser"><br>
+            <% if(errs1.length > 0){{%>
+                <div style="text-align: center;"class="alert alert-success" >
+                  <%= errs1 %>
+                </div>
+              <%  }} %>
+            <b>Username:</b> <input style="margin-left: 78px;" type="text"  value="<%- listuser.username %>" name="username" readonly><br>
+            <b>password:</b><input style="margin-left: 88px;" type="text" value="<%- listuser.password %>" name="password"><br>
+            <input type="submit" value="Edit">
+        </form>
+    </div>
+</body>
+</html>

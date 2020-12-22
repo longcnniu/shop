@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/style-addPro.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="form-addpro">
+        <strong>Thêm category mới</strong>
+        <% if(errs1.length > 0){{%>
+            <div style="text-align: center;" class="alert alert-success" >
+              <%= errs1 %>
+            </div>
+          <%  }} %>
+        <form action="../category/add" method="POST">
+            <b>Category Name:</b> <input style="margin-left: 78px;" type="text" name="nameCate"><br>
+            <input type="submit" value="Add new">
+        </form>
+    </div>
+</body>
+</html>
